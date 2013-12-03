@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><meta charset="utf-8" /><title>
+	Cardiac Organellar Protein Atlas Knowledgebase (COPaKB) -- Home of Heart Proteome
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" /><meta name="author" content="Joon-Sub Chung" /><link rel="stylesheet" type="text/css" media="all" href="./assets/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" media="all" href="./assets/css/bootstrap-responsive.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        body {
+
+            padding-bottom: 20px;
+            font-size: 12px;
+            font-family: 'Open Sans', sans-serif;
+            color: #7C7C7C;
+        }
+
+        .lead {
+            font-size: 16px;
+        }
+        .footer {
+            color: #888;
+        }
+
+        .footer > hr {
+            margin: 5px 0;
+            border: 0;
+            border-top: 1px solid #eeeeee;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        /* Custom container */
+        .container {
+            margin: 0 auto;
+            max-width: 1000px;
+        }
+
+        .container > hr {
+            margin: 0 0 60px 0;
+            border: none;
+        }
+
+        /* Customize the navbar links to be fill the entire space of the .navbar */
+        /* subhead
+    -------------------------------------------------- */
+        .subnav {
+            margin: 25px 0 0 0;
+            padding-bottom: 0;
+            height: 36px;
+            -webkit-border-top-left-radius: 0px;
+            -webkit-border-top-right-radius: 0px;
+            -moz-border-radius-topleft: 0px;
+            -moz-border-radius-topright: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            font-weight: bold;
+        }
+
+        .subnav .nav > li > a {
+            margin: 0;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+
+        .nav-pills > .active > a,
+        .nav-pills > .active > a:hover,
+        .nav-pills > .active > a:focus {
+            color: #ffffff;
+            background-color: #008cce;
+        }
+
+        .subnav .nav > .active > a,
+        .subnav .nav > .active > a:hover {
+            padding-left: 13px;
+            border-right-color: #aaa;
+            border-left: 0;
+            background-color: none;
+        }
+
+        .subnav .nav > .active > a .caret,
+        .subnav .nav > .active > a:hover .caret {
+            border-top-color: #fff;
+        }
+
+        .nav-tabs .open .dropdown-toggle, 
+        .nav-pills .open .dropdown-toggle, 
+        .nav > li.dropdown.open.active > a:hover, 
+        .nav > li.dropdown.open.active > a:focus {
+            color: #fff;
+            background-color: #16a9ea;
+            border-color: #16a9ea;
+        }
+
+        .subnav .nav > li:first-child > a,
+        .subnav .nav > li:first-child > a:hover {
+            border-left: 0;
+            padding-left: 12px;
+            -webkit-border-radius: 0px 0 0 0px;
+            -moz-border-radius: 0px 0 0 0px;
+            border-radius: 0px 0 0 0px;
+        }
+
+        .subnav .nav > li:last-child > a {
+            border-right: 0;
+        }
+
+        @media (max-width: 767px) {
+
+            .subnav {
+                position: static;
+                top: auto;
+                z-index: auto;
+                width: auto;
+                height: auto;
+                background: #fff; /* whole background property since we use a background-image for gradient */
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+
+            .subnav .nav > li {
+                float: none;
+            }
+
+            .subnav .nav > li > a {
+                border: 0;
+            }
+
+            .subnav .nav > li + li > a {
+                border-top: 1px solid #e5e5e5;
+            }
+
+            .subnav .nav > li:first-child > a,
+            .subnav .nav > li:first-child > a:hover {
+                -webkit-border-radius: 0px 0px 0 0;
+                -moz-border-radius: 0px 0px 0 0;
+                border-radius: 0px 0px 0 0;
+            }
+        }
+
+        @media (min-width: 980px) {
+
+            .subnav-fixed {
+                position: fixed;
+                top: 40px;
+                left: 0;
+                right: 0;
+                z-index: 1020; /* 10 less than .navbar-fixed to prevent any overlap */
+                border-color: #d5d5d5;
+                border-width: 0 0 1px; /* drop the border on the fixed edges */
+                -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-radius: 0px;
+                -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+                -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+                box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+                filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); /* IE6-9 */
+            }
+
+            .subnav-fixed .nav {
+                width: 938px;
+                margin: 0 auto;
+                padding: 0 1px;
+            }
+
+            .subnav .nav > li:first-child > a,
+            .subnav .nav > li:first-child > a:hover {
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0px;
+            }
+        }
+
+
+        @media (min-width: 1210px) {
+
+            .subnav-fixed .nav {
+                width: 1168px; /* 2px less to account for left/right borders being removed when in fixed mode */
+            }
+        }
+
+        .bar-left {
+            border-left: 1px solid #aaa;
+            padding-left: 10px;
+        }
+
+        .nav {
+            margin-bottom: 0px;
+            margin-left: 0;
+            list-style: none;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+
+        .carousel .container {
+            position: relative;
+            z-index: 9;
+        }
+
+        .carousel-control {
+            height: 80px;
+            margin-top: 0;
+            font-size: 120px;
+            text-shadow: 0 1px 1px rgba(0,0,0,.4);
+            background-color: transparent;
+            border: 0;
+            z-index: 10;
+        }
+
+        .carousel {
+            margin-bottom: 18px;
+        }
+
+        .carousel .item {
+            height: 275px;
+        }
+
+        .carousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 275px;
+        }
+
+        .wrapper {
+            margin-left: 50px;
+        }
+
+        .carousel-caption {
+            position: static;
+            max-width: 100%;
+            padding: 20px;
+            margin-top: 25px;
+            width: 550px;
+        }
+
+        .carousel-caption h1,
+        .carousel-caption .lead {
+            margin: 0;
+            line-height: 1.25;
+            color: #fff;
+            text-shadow: 0 1px 1px rgba(0,0,0,.3);
+        }
+
+        .carousel-caption .btn {
+            margin-top: 10px;
+        }
+
+        .carousel-indicators.middle {
+            left: 0;
+            right: 0;
+            top: auto;
+            bottom: 10px;
+            text-align: center;
+        }
+
+        .carousel-indicators.middle li {
+            float: none;
+            display: inline-block;
+            border: 1px solid #ddd;
+        }
+
+        .top-bar {
+            background-color: #0085ca;
+            color: #fff;
+            height: 10px;
+        }
+        .dl-horizontal dt {
+            float: left;
+            width: 120px;
+            overflow: hidden;
+            clear: left;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .dl-horizontal dd {
+            margin-left: 140px;
+        }
+
+        /** images **/
+        .imgbox{
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        }
+        .imgbox1 {
+        display: block; 
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        }
+        .imgbox img {
+        -webkit-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        -moz-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        }
+
+        .imgbox1 img {
+        -webkit-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        -moz-box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        box-shadow: 1px 4px 9px -1px rgba(0,0,0,0.65);
+        }
+        .magnify, .magnify1 {
+        position: relative;
+        }
+        /* Let's create the magnifying glass */
+        .large, .large1 {
+        display: none;
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        /* box shadows to achieve the glass effect */
+        -webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25)
+        }
+        /* To solve overlap bug at the edges during magnification */
+        .thumb, .thumb1 {
+            display: block;
+        }
+        .tab-content {
+         overflow: hidden;
+        }
+        .GeneExpressionSummary_subtitle {
+            font-weight:bold;
+        }
+        .GeneExpressionSummary_feature {
+            padding-left: 10px;
+            font-style:italic
+        }
+        .thumbsize {
+            height: 80px;
+            width: 80px;
+        }
+        .bigthumbsize {
+            width: 160px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin: 0px 5px 3px 0;
+            line-height: normal;
+        }
+        /* For copaclient */
+        .minijava {
+            height: 64px;
+        }
+        .oslogo {
+            height: 100px;
+        }
+        /* match input's margin-bottom */
+        .btn {
+            margin-bottom: 10px;
+        }
+        .xsmall {
+            height: 48px;
+        }
+        .imgpadding {
+            padding: 25px;
+            margin: 10px;
+        }
+        .sequence-type {
+            font-family: 'Courier New';
+            font-size: 15px;
+        }
+        /* For peptide info */
+        .spectra-padding {
+            margin-top: 29px;
+            border-bottom: 1px solid;
+        }
+        .pleft {
+            text-align: left;
+        }
+        .feature-part {
+            margin-top: 0px;
+            border: 10px solid #d2e1f6;
+            background-color: #488dcc;
+            color: #fff;
+            padding: 10px 20px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px; /* future proofing */
+            -khtml-border-radius: 10px; /* for old Konqueror browsers */
+        }
+        .feature-part a {
+            color: #fff;
+        }
+        .spaced {
+            margin-top:20px;
+        }
+        .img-center{
+            display: block;
+            margin: 0 auto;
+        }
+        .featured-text{
+            padding: 30px 0 15px;
+        }
+        .featured-buttons{
+            margin-top: 20px;
+            padding: 20px 0;
+        }
+        .bluish {
+            margin-top: 40px;
+            background-color: #488dcc;
+            color: #fff;
+        }
+        .qlink {
+            margin-top: 60px;
+        }
+    </style>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-23316083-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+</script>
+    
+    </head>
+
+    <form name="aspnetForm" method="post" action="default.aspx" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_Button1')" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMDUyNjYzMjgPZBYCZg9kFgICBQ9kFhACAQ8WBB4EVGV4dAVKPGRpdiBjbGFzcz0nYWxlcnQgYWxlcnQtZGFuZ2VyJz5TY2hlZHVsZWQgbWFpbnRlbmFuY2UgY29taW5nIDcvMjQvMTM8L2Rpdj4eB1Zpc2libGVoZAIDDxYCHwAFKDxsaT48YSBocmVmPSJEZWZhdWx0LmFzcHgiPkhvbWU8L2E+PC9saT5kAgUPFgIfAAUVPGxpIGNsYXNzPSJkcm9wZG93biI+ZAIHDxYCHwAFFTxsaSBjbGFzcz0iZHJvcGRvd24iPmQCCQ8WAh8ABWg8bGk+PGEgaHJlZj0iQ09QYVdpa2lEZWZhdWx0LmFzcHg/UGFnZU5hbWU9RnVuY3Rpb25zJTIwYW5kJTIwdXRpbGl0aWVzJTIwb2YlMjBDT1BhS0IiPlR1dG9yaWFsczwvYT48L2xpPmQCCw8WAh8ABU88bGk+PGEgaHJlZj0iQ09QYVdpa2lEZWZhdWx0LmFzcHg/UGFnZU5hbWU9Q09QYUtCK0hlbHArRGVzayI+SGVscCBEZXNrPC9hPjwvbGk+ZAINDxYCHwAFNzxsaT48YSBocmVmPSJDT1BhV2lraURlZmF1bHQuYXNweCI+Q09QYUtCIFdpa2k8L2E+PC9saT5kAhEPDxYCHwFoZGRkfGCNapPwFmPYP6OyCufwTH4wEX/LRgKeS/CwmATMAlw=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/COPa/WebResource.axd?d=24IUIcRuw608c4ZZWaYpCtRclYEZt-lEtwtYdwwVJxmQtQJOpoF3bQ0jVtFJNy-GJnWtcg3yPnqo1m4iqVA0AUt389E71KQ76u6Ddf_7ERo1&amp;t=634896577540000000" type="text/javascript"></script>
+
+
+<script src="/COPa/WebResource.axd?d=6mXtVyKVP3Ffts44zYjb7wGs0-dQsZkzzdnVsUMiw9g45-xanCLbnnoh9dtCQ3UNHoYBQKJcbFlxe9bjsvZfZ3Pqh7X_7KcQwbj25K-8_yY1&amp;t=634896577540000000" type="text/javascript"></script>
+    <div class="top-bar">
+    </div>
+    <div class="top-ish">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="featured-text text-center">
+                        <img src="./assets/img/copakb.png" alt="" />
+                </div>
+                <div class="featured-text">
+                    <h1 class="text-center">Where proteomics meets cardiovascular biology and medicine.</h1>
+                    <p class="lead text-center">The COPa Knowledgebase (COPaKB) Project is developed under NHLBI Proteomics Centers Program. COPaKB has been created as a unique resource to facilitate understanding of novel biological insights from proteomic datasets</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span4">
+                <div class="row-fluid">
+                    <br /><br /><br /><br /><br /><br />
+                </div>
+                <div class="row-fluid">
+                    <h2 class="text-center">Use COPaKB</h2>
+                    <a href="http://www.heartproteome.org"><img src="./assets/img/use.png" class="img-center" alt="" /></a>
+                    Get started with <a href="http://www.heartproteome.org/copa/KeywordSearch.aspx?type=1">Protein Identifier</a>,
+                    <a href="http://www.heartproteome.org/copa/KeywordSearch.aspx?type=2">Amino Acid Sequence</a>,
+                    <a href="http://www.heartproteome.org/copa/MSRUNSearch.aspx">MS Data File (mzML)</a>,
+                    <a href="http://www.heartproteome.org/copa/SpectralSearch.aspx">MS Data File (DTA)</a>,
+                    <a href="http://www.heartproteome.org/copa/epiSearch.aspx">Analysis of Multiple Datasets</a>
+                </div>
+            </div>
+            <div class="span4">
+                <h2 class="text-center">Get COPaKB</h2>
+                <a href="http://www.heartproteome.org/copa/COPaKBClient.aspx"><img src="./assets/img/download.png" class="img-center" alt="" /></a>
+                Install the <a href="http://www.heartproteome.org/copa/COPaKBClient.aspx">COPaKB Client</a> or download the <a href="https://itunes.apple.com/us/app/icopa/id568723410?mt=8v">COPaKB iOS</a> app.
+                <br /><br /><br />
+                <h2 class="text-center">Get Involved</h2>
+                <a href="http://www.heartproteome.org/copa/COPaWikiDefault.aspx"><img src="./assets/img/get.png" class="img-center" alt="" /></a>
+                Expand COPaKB by contributing to the <a href="http://www.heartproteome.org/copa/COPaKBClient.aspx">wikipedia</a> or download the <a href="https://itunes.apple.com/us/app/icopa/id568723410?mt=8v">COPaKB iOS</a> app.
+            </div>
+            <div class="span4">
+                <div class="row-fluid">
+                    <br /><br /><br /><br /><br /><br />
+                </div>
+                <div class="row-fluid">
+                    <h2 class="text-center">Learn COPaKB</h2>
+                    <a href="http://www.heartproteome.org/copa/COPaWikiDefault.aspx?PageName=COPaKB+Help+Desk"><img src="./assets/img/learn.png" class="img-center" alt="" /></a>
+                    Learn how to use COPaKB through the <a href="http://www.heartproteome.org/copa/COPaWikiDefault.aspx?PageName=COPaKB+Help+Desk">Help Desk</a> or  <a href="http://www.heartproteome.org/copa/COPaWikiDefault.aspx?PageName=FUNCTIONS%20AND%20UTILITIES%20OF%20COPaKB">Tutorials</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+   
+-->
+    <div class="qlink">
+        <div class="container">
+            <h3 class="text-center">Quick Links</h3>
+            <div class="row-fluid">
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="KeywordSearch.aspx?type=1">
+                            <img src="./assets/img/a1.jpg"/>
+                            <h5>Protein Identifier Query</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="KeywordSearch.aspx?type=2">
+                            <img src="./assets/img/a2.jpg"/>
+                            <h5>Amino Acid Sequence Query</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="MSRUNSearch.aspx">
+                            <img src="./assets/img/a3.jpg"/>
+                            <h5>MS Data File (mzML)</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="SpectralSearch.aspx">
+                            <img src="./assets/img/a4.jpg"/>
+                            <h5>MS Data File (DTA)</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="COPaKBClient.aspx">
+                            <img src="./assets/img/a5.jpg"/>
+                            <h5>MS Data File (Client)</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="span2">
+                    <div class="text-center">
+                        <a href="epiSearch.aspx">
+                            <img src="./assets/img/a6.jpg"/>
+                            <h5>Analysis of Multiple Datasets</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bluish">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="featured-buttons">
+                    <p class="lead text-center">COPa Knowledgebase is supported by a Proteomics Center Award from NHLBI/NIH</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+     <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                
+                <div class="row-fluid">
+                    <div class="feature-part">
+                    <h3>Quick Links</h3>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <p class="lead">
+                                    <i class="icon-search icon-white"></i> <a href="">Protein Identifier Query</a><br />
+                                    <i class="icon-search icon-white"></i> <a href="KeywordSearch.aspx?type=2">Amino Acid Sequence Query</a><br />
+                                    <i class="icon-search icon-white"></i> <a href="">MS Data File (mzML)</a><br />
+                                </p>
+                            </div>
+                            <div class="span6">
+                                <p class="lead">
+                                    <i class="icon-search icon-white"></i> <a href="">MS Data File (DTA)</a><br />
+                                    <i class="icon-search icon-white"></i> <a href="">MS Data File (COPaKB Client)</a><br />
+                                    <i class="icon-search icon-white"></i> <a href="">Analysis of Multiple Datasets</a><br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+-->
+
+    <hr>
+    <div class="container">
+        <div class="footer">
+            <div class="row-fluid">
+                <div class="span6">
+                    
+                    &copy; COPaKB 2013 | NHLBI Proteomics Center at UCLA<br />
+                   675 Charles E. Young Dr. South, MRL Building Suite 1-609, Los Angeles, CA 90095-1760
+                </div>
+                <div class="text-right offset2 span4">
+                    <a href="COPaWikiDefault.aspx?PageName=COPaKB+Help+Desk">Help Desk</a> | <a href="COPaWikiDefault.aspx?PageName=FUNCTIONS%20AND%20UTILITIES%20OF%20COPaKB">Tutorials</a> | <a href="COPaWikiDefault.aspx">COPaKB Wiki</a> 
+                </div>
+            </div>
+            <hr class="foot">
+            <p>
+                COPa Knowledgebase is supported by a Proteomics Center Award from NIH;<br />
+                NHLBI Contract 268201000035C: Proteome Biology of Cardiovascular Disease.
+            </p>
+        </div>
+
+    </div> <!-- /container -->
+        
+    
+
+<script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('Button1');//]]>
+</script>
+</form>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/magnify.js"></script>
+    
+    
+    
+    
+</body>
+</html>
+
